@@ -13,6 +13,10 @@ provider "aws" {
   region  = "us-west-2"
 }
 
+module infra {
+  source = "../infra"
+}
+
 data "aws_eks_cluster" "default" {
   name = var.cluster_name
 }
