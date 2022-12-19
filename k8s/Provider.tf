@@ -15,6 +15,8 @@ provider "aws" {
 
 module infra {
   source = "../infra"
+  
+  cluster_name = var.cluster_name
 }
 
 data "aws_eks_cluster" "default" {
