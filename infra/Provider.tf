@@ -14,6 +14,6 @@ provider "aws" {
 }
 
 module "k8s" {
-  source = "../infra"
+  source = "../k8s"
   depends_on = [module.eks]
 }
