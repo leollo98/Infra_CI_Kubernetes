@@ -1,8 +1,8 @@
-resource "kubernetes_deployment" "Django-API" {
+resource "kubernetes_deployment" "Go-API" {
   metadata {
-    name = "django-api"
+    name = "go-api"
     labels = {
-      nome = "django"
+      nome = "Go"
     }
   }
 
@@ -11,20 +11,20 @@ resource "kubernetes_deployment" "Django-API" {
 
     selector {
       match_labels = {
-        nome = "django"
+        nome = "Go"
       }
     }
 
     template {
       metadata {
         labels = {
-          nome = "django"
+          nome = "Go"
         }
       }
 
       spec {
         container {
-          image = "962752222089.dkr.ecr.us-west-2.amazonaws.com/producao:v1"
+          image = "leonardosartorello/go_ci:22"
           name  = "django"
 
           resources {
@@ -40,7 +40,7 @@ resource "kubernetes_deployment" "Django-API" {
 
           liveness_probe {
             http_get {
-              path = "/clientes/"
+              path = "/bruno"
               port = 8000
             }
 
@@ -55,11 +55,11 @@ resource "kubernetes_deployment" "Django-API" {
 
 resource "kubernetes_service" "LoadBalancer" {
   metadata {
-    name = "load-balancer-django-api"
+    name = "load-balancer-go-api"
   }
   spec {
     selector = {
-      nome = "django"
+      nome = "Go"
     }
     port {
       port = 8000
@@ -71,7 +71,7 @@ resource "kubernetes_service" "LoadBalancer" {
 
 data "kubernetes_service" "nomeDNS" {
     metadata {
-      name = "load-balancer-django-api"
+      name = "load-balancer-go-api"
     }
 }
 
