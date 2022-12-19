@@ -5,8 +5,8 @@ resource "aws_security_group" "ssh_cluster" {
 
 resource "aws_security_group_rule" "ssh_cluster_in" {
   type              = "ingress"
-  from_port         = 22
-  to_port           = 22
+  from_port         = 0
+  to_port           = 0
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"] #0.0.0.0 - 255.255.255.255
   security_group_id = aws_security_group.ssh_cluster.id
