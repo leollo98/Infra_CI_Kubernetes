@@ -12,3 +12,8 @@ terraform {
 provider "aws" {
   region  = "us-west-2"
 }
+
+module "k8s" {
+  source = "../infra"
+  depends_on = [module.eks]
+}
