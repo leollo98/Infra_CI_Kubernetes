@@ -3,7 +3,3 @@ module "prod" {
     
     cluster_name = "homolog"
 }
-
-output "endereco" {
-    value = module.prod.URL
-}
