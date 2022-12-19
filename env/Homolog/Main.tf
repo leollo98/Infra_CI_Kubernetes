@@ -2,7 +2,7 @@ module "prod" {
     source = "../../infra"
 
     nome_repositorio = "producao"
-    cluster_name = "producao"
+    cluster_name = "homolog"
 }
 
 output "endereco" {
