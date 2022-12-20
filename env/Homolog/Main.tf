@@ -1,5 +1,5 @@
 module "prod" {
     source = "../../infra"
     
-    cluster_name = "homolog"
+    cluster_name = "homolog2"
 }
