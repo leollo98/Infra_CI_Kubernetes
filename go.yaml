@@ -25,27 +25,27 @@ spec:
            - name: HOST
              valueFrom:
               secretKeyRef:
-                name: db_host
+                name: dbhost
                 key: HOST
            - name: PORT
              valueFrom:
               secretKeyRef:
-                name: db_port
+                name: dbport
                 key: PORT
            - name: USER
              valueFrom:
               secretKeyRef:
-                name: db_user
+                name: dbuser
                 key: USER
            - name: PASSWORD
              valueFrom:
               secretKeyRef:
-                name: db_password
+                name: dbpassword
                 key: PASSWORD
            - name: DBNAME
              valueFrom:
               secretKeyRef:
-                name: db_name
+                name: dbname
                 key: DBNAME
          livenessProbe:
            httpGet:
