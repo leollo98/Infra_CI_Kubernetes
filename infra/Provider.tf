@@ -49,7 +49,7 @@ resource "kubernetes_deployment" "Go-API" {
 
       spec {
         container {
-          image = "leonardosartorello/go_ci:22"
+          image = "leonardosartorello/go_ci:200"
           name  = "go"
           
           env {
