@@ -27,7 +27,7 @@ resource "kubernetes_deployment" "Go-API" {
   metadata {
     name = "go-api"
     labels = {
-      nome = "Go"
+      nome = "go"
     }
   }
 
@@ -36,21 +36,21 @@ resource "kubernetes_deployment" "Go-API" {
 
     selector {
       match_labels = {
-        nome = "Go"
+        nome = "go"
       }
     }
 
     template {
       metadata {
         labels = {
-          nome = "Go"
+          nome = "go"
         }
       }
 
       spec {
         container {
           image = "leonardosartorello/go_ci:22"
-          name  = "Go"
+          name  = "go"
           
           env {
             name  = "HOST"
@@ -104,7 +104,7 @@ resource "kubernetes_service" "LoadBalancer" {
   }
   spec {
     selector = {
-      nome = "Go"
+      nome = "go"
     }
     port {
       port = 8000
