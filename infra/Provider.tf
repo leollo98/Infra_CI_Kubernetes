@@ -89,7 +89,7 @@ resource "kubernetes_deployment" "Go-API" {
               port = 8000
             }
 
-            initial_delay_seconds = 3
+            initial_delay_seconds = 30
             period_seconds        = 3
           }
         }
