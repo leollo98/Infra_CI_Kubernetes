@@ -27,11 +27,11 @@ spec:
               secretKeyRef:
                 name: dbhost
                 key: HOST
-           - name: PORT
+           - name: DBPORT
              valueFrom:
               secretKeyRef:
                 name: dbport
-                key: PORT
+                key: DBPORT
            - name: USER
              valueFrom:
               secretKeyRef:
@@ -47,6 +47,11 @@ spec:
               secretKeyRef:
                 name: dbname
                 key: DBNAME
+           - name: PORT
+             valueFrom:
+              secretKeyRef:
+                name: port
+                key: PORT
          livenessProbe:
            httpGet:
              path: /bruno
