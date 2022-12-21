@@ -10,3 +10,7 @@ resource "aws_db_instance" "default" {
   db_subnet_group_name = module.vpc.database_subnet_group_name
   vpc_security_group_ids = [aws_security_group.db.id]
 }
+
+output "IP" {
+  value = aws_db_instance.default.address
+}
