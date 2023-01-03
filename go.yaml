@@ -5,6 +5,7 @@ metadata:
   labels:
     nome: go
 spec:
+  backoffLimit: 60
   selector:
     matchLabels:
       nome: go
@@ -16,6 +17,7 @@ spec:
       labels:
         nome: go
     spec:
+    
       containers: 
        - name: go
          image: leonardosartorello/go_ci:213 
