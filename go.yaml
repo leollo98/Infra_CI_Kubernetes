@@ -19,7 +19,6 @@ spec:
       containers: 
        - name: go
          image: leonardosartorello/go_ci:213 
-         restartPolicy: Always
          ports:
           - containerPort: 8000
          env:
@@ -59,3 +58,4 @@ spec:
              port: 8000
            initialDelaySeconds: 30
            periodSeconds: 5
+      restartPolicy: Always
