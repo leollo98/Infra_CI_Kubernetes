@@ -57,6 +57,6 @@ spec:
            httpGet:
              path: /bruno
              port: 8000
-           initialDelaySeconds: 30
+           initialDelaySeconds: 60
            periodSeconds: 5
       restartPolicy: Always
